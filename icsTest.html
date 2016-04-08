@@ -1,0 +1,23 @@
+<html ng-app="AddCalendar">
+
+<header>
+	<title>Add event to calendar</title>
+</header>
+
+<body ng-controller="addEventToCalendarCtrl">
+
+<div>
+    <button ng-click="downloadCalendarFile()">Add to calendar</button>
+    <button ng-click="changeTestData()">Change test data</button>
+</div>
+
+<div ng-module="test">{{ test }}</div>
+
+</body>
+
+</html>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/ics.js/ics.js"></script>
+<script type="text/javascript" src="bower_components/ics.js/ics.deps.min.js"></script>
+<script type="text/javascript" src="JS/controller/addCalendar.js"></script>

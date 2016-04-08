@@ -1,0 +1,42 @@
+<html ng-app="HouseInfo">
+
+<header>
+	<title>House Information</title>
+</header>
+
+<body ng-controller="homeModelController">
+	
+	<div>
+		<div>请选择区域:</div>
+		<select ng-model="homeRegion" ng-options="region for region in homeRegions">
+				<option value="">--请选择区域--</option>
+		</select>
+	</div>
+	<div ng-show="homeRegion!=null">选择的是:{{ homeRegion }}</div>
+<br />
+	<div>
+		<div>请选择类型:</div>
+		<select ng-model="homeType" ng-options="type for type in homeTypes">
+			<option value="">--请选择类型--</option>
+		</select>
+	</div>
+	<div ng-show="homeType!=null">选择的是:{{ homeType }}</div>
+
+<br />
+
+	<div>
+		<button ng-click="search(homeRegion, homeType)">查询</button>
+		<ul>
+		    <li ng-repeat="item in searchResults" </li>
+		        <input type="text" ng-model="item.region" />
+		        <input type="text" ng-model="item.type" />
+				<input type="text" ng-model="item.name" />
+		</ul>
+	</div>
+</body>
+
+</html>
+
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="/JS/homeModel.js"></script>
+<script type="text/javascript" src="/JS/houseinfo-service.js"></script>
